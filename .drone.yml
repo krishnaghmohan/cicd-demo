@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image : docker/docker:latest
+    image : drone/drone:latest
     environment:
       - sshuser=$$sshuser
       - sshkey=$$sshkey
