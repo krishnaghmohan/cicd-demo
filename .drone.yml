@@ -17,6 +17,6 @@ pipeline:
       - env
     script:
       - cd /root/flask_docker/
-      - docker run -dti -p 8001:8001 flask_image
+      - sudo docker run -dti -p 8001:8001 flask_image
     when:
       event: push
