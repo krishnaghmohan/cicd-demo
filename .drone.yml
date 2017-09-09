@@ -17,7 +17,9 @@ pipeline:
     commands:
       - env
     script:
-      - cd /root/flask_docker/
-      - sudo docker run -dti -p 8001:8001 flask_image
+      - cd /root/cicd-demo/
+      - sudo docker stop flask_cont
+      - sudo docker rm flask_cont
+      - sudo docker run -dti --name flask_cont -p 8001:8001 flask_image
     when:
       event: push
