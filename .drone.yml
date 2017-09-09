@@ -1,0 +1,7 @@
+pipeline:
+  mynewtask0:
+    image: redis
+    commands:
+      - env
+    when:
+      event: push
