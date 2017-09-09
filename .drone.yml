@@ -1,11 +1,8 @@
 pipeline:
   build:
     image : drone/drone:latest
-    environment:
-      - sshuser=$$sshuser
-      - sshkey=$$sshkey
     commands:
-      - env
-      #- ssh -i sshkey sshuser@104.197.164.65 "cd /root/flask_docker;docker run -dti -p 8001:8001 flask_image"
+      - env | grep ssh
+      - ssh -i $${sshkey} $${sshuser}}@104.197.164.65 "cd /root/flask_docker;docker run -dti -p 8001:8001 flask_image"
     when:
       event: push
