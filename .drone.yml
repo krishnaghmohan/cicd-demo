@@ -1,7 +1,11 @@
 pipeline:
-  mynewtask0:
-    image: redis
-    commands:
+  build:
+    image : docker/docker:latest
+    environment:
+	  - sshuser=$$sshuser
+	  - sshkey=$$sshkey
+	commands:
       - env
-    when:
-      event: push
+	  - ssh -i sshkey sshuser@104.197.164.65 "cd /root/flask_docker;docker run -dti -p 8001:8001 flask_image"
+	when:
+	  event: push
