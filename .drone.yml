@@ -6,6 +6,6 @@ pipeline:
       - sshkey=$$sshkey
     commands:
       - env
-      - ssh -i sshkey sshuser@104.197.164.65 "cd /root/flask_docker;docker run -dti -p 8001:8001 flask_image"
+      #- ssh -i sshkey sshuser@104.197.164.65 "cd /root/flask_docker;docker run -dti -p 8001:8001 flask_image"
     when:
       event: push
