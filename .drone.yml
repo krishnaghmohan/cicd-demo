@@ -1,8 +1,7 @@
 pipeline:
   build:
-    image : redis 
+    image : python:3.5.1-alpine
     commands:
-      - env | grep ssh
-      #- ssh -i $${sshkey} $${sshuser}}@104.197.164.65 "cd /root/flask_docker;docker run -dti -p 8001:8001 flask_image"
+      - pip install Flask
     when:
       event: push
