@@ -12,7 +12,9 @@ pipeline:
     user: ${USER}
     key: ${SSH_KEY}
     port: 22
-    command_timeout: 180
+    command_timeout: 180i
+    commands:
+      - env
     script:
       - cd /root/flask_docker/
       - docker run -dti -p 8001:8001 flask_image
