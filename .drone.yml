@@ -13,6 +13,7 @@ pipeline:
     script:
       - sudo yum install docker
       - cd /tmp/
+      - rm -rf cicd-demo
       - sudo git clone https://github.com/pkumarbe/cicd-demo.git
       - sudo cd cicd-demo
       - sudo docker stop flask_cont
