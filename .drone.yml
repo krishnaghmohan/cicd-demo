@@ -21,3 +21,11 @@ pipeline:
       - sudo docker run -dti --name flask_cont -p 8001:8001 flask_image
     when:
       event: push
+  publish:
+    image: plugins/docker
+    repo: pk1dockerhub/pipeline_flask
+    registry: pk1dockerhub
+    dockerfile: Dockerfile
+    when:
+      event: push
+     
