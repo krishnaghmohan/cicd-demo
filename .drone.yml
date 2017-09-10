@@ -23,9 +23,9 @@ pipeline:
     when:
       event: push
   publish:
-    image: plugins/docker
+    image:  appleboy/drone-ssh
     repo: hub.docker.com/pk1dockerhub/pipeline_flask
-    registry: pk1dockerhub
+    registry: hub.docker.com
     dockerfile: Dockerfile
     when:
       event: push
