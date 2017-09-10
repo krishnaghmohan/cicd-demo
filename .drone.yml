@@ -11,7 +11,10 @@ pipeline:
     commands:
       - env
     script:
-      - cd /root/cicd-demo/
+      - sudo yum install docker
+      - cd /tmp/
+      - sudo git clone https://github.com/pkumarbe/cicd-demo.git
+      - sudo cd cicd-demo
       - sudo docker stop flask_cont
       - sudo docker rm flask_cont
       - sudo docker build -t flask_image .
