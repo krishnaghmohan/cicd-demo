@@ -6,7 +6,7 @@ def main():
     return "Welcome to gcp World Compute"
 @app.route("/hello")
 def hello():
-    return "Hello Mr x"
+    return "Hello Mr "
 
 if __name__ == "__main__":
 
