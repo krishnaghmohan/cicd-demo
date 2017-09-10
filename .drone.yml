@@ -23,7 +23,7 @@ pipeline:
       event: push
   publish:
     image: plugins/docker
-    repo: pk1dockerhub/pipeline_flask
+    repo: hub.docker.com/pk1dockerhub/pipeline_flask
     registry: pk1dockerhub
     dockerfile: Dockerfile
     when:
