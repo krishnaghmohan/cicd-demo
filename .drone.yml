@@ -1,11 +1,5 @@
 pipeline:
   build:
-    image : python:3.5.2
-    commands:
-      - pip install Flask
-    when:
-      event: push
-  ssh-deploy:
     image: appleboy/drone-ssh
     pull: true
     host: ${HOST}
